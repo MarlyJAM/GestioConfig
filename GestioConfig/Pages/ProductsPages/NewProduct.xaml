@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:GestioConfig.Pages" 
+             x:Class="GestioConfig.Pages.ProductsPages.NewProduct"
+             Title="New"
+             BackgroundImageSource="moda.jpg"
+             IconImageSource="newproduct.png">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Button x:Name="newproduct" Text="New product" Clicked="newproduct_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
+            <Entry x:Name="txtName" Placeholder="Name" IsVisible="false"/>
+            <Entry x:Name="txtDescription" Placeholder="Description" IsVisible="false" />
+            <Entry x:Name="txtPrice" Placeholder="Price" IsVisible="false" />
+            <Entry x:Name="txtQuantity" Placeholder="Quantity" IsVisible="false"/>
+            <Picker x:Name="picker"  ItemDisplayBinding="{Binding name}" Title="Select a category" IsVisible="false" SelectedIndexChanged="picker_SelectedIndexChanged"  />
+            <Button x:Name="btnCreate" Text="create" Clicked="btnCreate_Clicked" IsVisible="false" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige"  />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
