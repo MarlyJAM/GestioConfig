@@ -25,7 +25,7 @@ namespace GestioConfig.Pages.ProductsPages
         private async void btndress_Clicked(object sender, EventArgs e)
         {
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("http://192.168.102.84:80/gestioconfig/product.php?category_id=1");
+            request.RequestUri = new Uri("http://192.168.94.84:80/gestioconfig/product.php?category_id=1");
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
             var client = new HttpClient();
@@ -42,7 +42,7 @@ namespace GestioConfig.Pages.ProductsPages
         private async void btnskirt_Clicked(object sender, EventArgs e)
         {
             var skirtrequest = new HttpRequestMessage();
-            skirtrequest.RequestUri = new Uri("http://192.168.102.84:80/gestioconfig/product.php?category_id=2");
+            skirtrequest.RequestUri = new Uri("http://192.168.94.84:80/gestioconfig/product.php?category_id=2");
             skirtrequest.Method = HttpMethod.Get;
             skirtrequest.Headers.Add("Accept", "application/json");
             var skirtclient = new HttpClient();

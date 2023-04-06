@@ -35,7 +35,7 @@ namespace GestioConfig.Pages
             var httpClient = new HttpClient();
             try
             {
-                var response = await httpClient.PostAsync("http://192.168.102.84:80/gestioconfig/login.php", content);
+                var response = await httpClient.PostAsync("http://192.168.94.84:80/gestioconfig/login.php", content);
                 response.EnsureSuccessStatusCode();
                var responseContent = await response.Content.ReadAsStringAsync();
                 Console.WriteLine("Montre moi le : " + responseContent);

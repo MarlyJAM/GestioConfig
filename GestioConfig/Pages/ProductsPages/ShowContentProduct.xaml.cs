@@ -64,6 +64,7 @@ namespace GestioConfig.Pages.ProductsPages
             }
             Products p = new Products
             {
+                id=products.id,
                 name = txtName.Text,
                 description = txtDescription.Text,
                 quantity = Int32.Parse((txtQuantity.Text).ToString()),
@@ -71,7 +72,7 @@ namespace GestioConfig.Pages.ProductsPages
                 category_id = selectedCategoryId,
 
             };
-            Uri RequestUri = new Uri("http://192.168.102.84:80/gestioconfig/product.php?id=products.id");
+            Uri RequestUri = new Uri($"http://192.168.94.84:80/gestioconfig/product.php?id={products.id}");
             var client = new HttpClient();
             var json = JsonConvert.SerializeObject(p);
             var contentJson = new StringContent(json, Encoding.UTF8, "application/json");
@@ -102,5 +103,36 @@ namespace GestioConfig.Pages.ProductsPages
             return isValid;
         }
 
+        private async void btnDelete_Clicked(object sender, EventArgs e)
+        {
+            if (selectedCategoryId == 0)
+            {
+                await DisplayAlert("Erreur", "Veuillez sélectionner une catégorie.", "OK");
+                return;
+            }
+            if (!IsInteger(txtQuantity.Text))
+            {
+                await DisplayAlert("Erreur", "Veuillez entrer une quantité valide.", "OK");
+                return;
+            }
+            if (!ValidatePrice(txtPrice.Text))
+            {
+                return;
+            }
+            await DisplayAlert("Warning", "Voulez vous vraiment supprimer ce produit?", "OK");
+            Uri RequestUri = new Uri($"http://192.168.94.84:80/gestioconfig/product.php?id={products.id}");
+            var client = new HttpClient();
+            var response = await client.DeleteAsync(RequestUri);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+
+                await DisplayAlert("Data", "Product was deleted ", "OK");
+                await Navigation.PushAsync(new AllProducts());
+            }
+            else
+            {
+                await DisplayAlert("Data", "Error ", "OK");
+            }
+        }
     }
 }

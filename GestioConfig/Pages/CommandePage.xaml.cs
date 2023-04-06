@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace GestioConfig.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CommandePage : ContentPage
+    public partial class CommandePage : TabbedPage
     {
         public CommandePage()
         {

@@ -27,7 +27,7 @@ namespace GestioConfig.Pages.ProductsPages
         {
             selectedProduct = (Products)listProducts.SelectedItem;
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("http://192.168.102.84:80/gestioconfig/category.php");
+            request.RequestUri = new Uri("http://192.168.94.84:80/gestioconfig/category.php");
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
             var client = new HttpClient();

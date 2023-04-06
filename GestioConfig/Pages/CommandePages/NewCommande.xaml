@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:pages="clr-namespace:GestioConfig.Pages"
+             xmlns:models="clr-namespace:GestioConfig.Models"
+             x:DataType="models:Products"
+             x:Class="GestioConfig.Pages.CommandePages.NewCommande"
+             Title="NewCommande"
+             IconImageSource="newcommande.png" >
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10" >
+                <StackLayout Spacing="10" Margin="20">
+                    <Label x:Name="txtcommande" FontSize="Medium" Text="New Commande" HorizontalOptions="Center" />
+                    <Button x:Name="Charger" Clicked="Charger_Clicked" Text="START" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" ></Button>
+                    <Entry x:Name="txtReference"  Placeholder="Reference" IsVisible="false"></Entry>
+                    <Entry x:Name="txtCustomer_mail" Keyboard = "Email"  Placeholder="Customer_mail" IsVisible="false"></Entry>
+                    <Entry x:Name="txtCustomer_name" Placeholder="Customer_name" IsVisible="false"></Entry>
+                    <Button x:Name="addProduct" Clicked="addProduct_Clicked"  Text="addProducts" IsVisible="false" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" ></Button>
+                </StackLayout >
+                <StackLayout x:Name="StackLayout" Margin="20" Orientation="Horizontal">
+                </StackLayout >
+                <StackLayout Margin="20">
+                    <Button x:Name="create" Clicked="create_Clicked"  Text="CREATE" IsVisible="false" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" ></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

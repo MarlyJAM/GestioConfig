@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestioConfig.Pages.CommandePages.AllCommandes"
+             Title="AllCommandes"
+             IconImageSource="allcommande.png">
+    <ContentPage.Content>
+        <StackLayout Margin="20" VerticalOptions="Center">
+            <Button x:Name="ShowCommande" Clicked="ShowCommande_Clicked" Text="show"  CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
+            <ListView x:Name="listCommandes"  IsPullToRefreshEnabled="true" ItemSelected="listCommandes_ItemSelected" IsVisible="false">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding created_at}" Detail="{Binding reference}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

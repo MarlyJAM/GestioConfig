@@ -6,8 +6,9 @@
              BackgroundImageSource="moda.jpg"
              IconImageSource="newproduct.png">
     <ContentPage.Content>
-        <StackLayout Margin="20">
+        <StackLayout Margin="20" VerticalOptions="Center">
             <Button x:Name="newproduct" Text="New product" Clicked="newproduct_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
+            <Entry x:Name="txtReference" Placeholder="Reference" IsVisible="false"/>
             <Entry x:Name="txtName" Placeholder="Name" IsVisible="false"/>
             <Entry x:Name="txtDescription" Placeholder="Description" IsVisible="false" />
             <Entry x:Name="txtPrice" Placeholder="Price" IsVisible="false" />

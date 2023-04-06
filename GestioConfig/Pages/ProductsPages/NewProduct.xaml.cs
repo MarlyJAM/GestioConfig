@@ -28,6 +28,7 @@ namespace GestioConfig.Pages.ProductsPages
         private async void newproduct_Clicked(object sender, EventArgs e)
         {
             newproduct.IsVisible = false;
+            txtReference.IsVisible = true;
             txtPrice.IsVisible = true;
             txtQuantity.IsVisible = true;
             txtName.IsVisible = true;
@@ -35,7 +36,7 @@ namespace GestioConfig.Pages.ProductsPages
             btnCreate.IsVisible = true;
             picker.IsVisible = true;
             var request = new HttpRequestMessage();
-            request.RequestUri = new Uri("http://192.168.102.84:80/gestioconfig/category.php");
+            request.RequestUri = new Uri("http://192.168.94.84:80/gestioconfig/category.php");
             request.Method = HttpMethod.Get;
             request.Headers.Add("Accept", "application/json");
             var client = new HttpClient();
@@ -82,7 +83,7 @@ namespace GestioConfig.Pages.ProductsPages
                 return;
             }
             Products p = new Products
-            {
+            {   reference=txtReference.Text,
                 name = txtName.Text,
                 description = txtDescription.Text,
                 quantity = Int32.Parse((txtQuantity.Text).ToString()),
@@ -90,7 +91,7 @@ namespace GestioConfig.Pages.ProductsPages
                 category_id = selectedCategoryId,
 
             };
-            Uri RequestUri = new Uri("http://192.168.102.84:80/gestioconfig/product.php");
+            Uri RequestUri = new Uri("http://192.168.94.84:80/gestioconfig/product.php");
             var client = new HttpClient();
             var json = JsonConvert.SerializeObject(p);
             var contentJson = new StringContent(json, Encoding.UTF8, "application/json");

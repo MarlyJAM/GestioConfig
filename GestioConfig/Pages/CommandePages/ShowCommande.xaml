@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:GestioConfig.Models"
+             x:Class="GestioConfig.Pages.CommandePages.ShowCommande">
+    <ContentPage.Content>
+        <StackLayout Margin="10" Spacing="20">
+            <StackLayout Orientation="Horizontal">
+            <Label x:DataType="models:Commande"  FontSize="Large" x:Name="txtReference" Text="{Binding reference}"></Label>
+            <Label x:DataType="models:Commande" FontSize="Large" x:Name="txtDate" Text="{Binding created_at}"/>
+            <Label x:DataType="models:Commande" FontSize="Large" x:Name="txtCustomerName" Text="{Binding customer_name}"></Label>
+            <Label x:DataType="models:Commande" FontSize="Large" x:Name="txtCustomerMail" Text="{Binding customer_email}"/>
+            </StackLayout>
+            <ListView x:Name="listProducts"  >
+                <ListView.ItemTemplate >
+                    <DataTemplate x:DataType="models:Product">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout>
+                                    <Label FontAttributes="Bold" Text="Ref:"  />
+                                    <Label x:Name="txtReferenceProduct" FontSize="15" Text="{Binding reference}"  />
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label FontAttributes="Bold"  Text="Name" />
+                                    <Label x:Name="txtNameProduct" FontSize="15"  Text="{Binding name}"  />
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label FontAttributes="Bold" Text="Stock "  />
+                                    <Label x:Name="txtQuantity" FontSize="15"   Text="{Binding quantity}"/>
+                                </StackLayout>
+                                <StackLayout >
+                                    <Label FontAttributes="Bold"   Text="Price" />
+                                    <Label x:Name="txtPrice" FontSize="15"   Text="{Binding price}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
