@@ -10,7 +10,7 @@
             <ListView x:Name="listCommandes"  IsPullToRefreshEnabled="true" ItemSelected="listCommandes_ItemSelected" IsVisible="false">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding created_at}" Detail="{Binding reference}"/>
+                        <TextCell  Text="{Binding created_at}" Detail="{Binding reference}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

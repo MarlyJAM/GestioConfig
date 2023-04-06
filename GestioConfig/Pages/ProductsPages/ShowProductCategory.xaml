@@ -3,14 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GestioConfig.Pages.ProductsPages.ShowProductCategory">
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="listProducts"  IsPullToRefreshEnabled="true" ItemSelected="listProducts_ItemSelected">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding name}" Detail="{Binding quantity}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <ListView x:Name="listProducts"  IsPullToRefreshEnabled="true" ItemSelected="listProducts_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding name}" Detail="{Binding quantity}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

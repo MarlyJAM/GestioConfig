@@ -1,7 +1,10 @@
 ﻿using GestioConfig.Models;
+using GestioConfig.Pages.ProductsPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,9 +33,22 @@ namespace GestioConfig.Pages.InventoryPages
             txtQuantity.BindingContext = products; */
         }
 
-        private void listProducts_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void btnDelete_Clicked(object sender, EventArgs e)
         {
+            await DisplayAlert("Warning", "Voulez vous vraiment supprimer cet inventaire?", "OK");
+            Uri RequestUri = new Uri($"http://192.168.94.84:80/gestioconfig/inventory.php?id={inventory.id}");
+            var client = new HttpClient();
+            var response = await client.DeleteAsync(RequestUri);
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
 
+                await DisplayAlert("Data", "Inventory was deleted ", "OK");
+                await Navigation.PushAsync(new AllInventories());
+            }
+            else
+            {
+                await DisplayAlert("Data", "Error ", "OK");
+            }
         }
     }
 }

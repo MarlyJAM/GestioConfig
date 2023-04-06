@@ -6,15 +6,17 @@
              BackgroundImageSource="moda.jpg"
              IconImageSource="newproduct.png">
     <ContentPage.Content>
-        <StackLayout Margin="20" VerticalOptions="Center">
-            <Button x:Name="newproduct" Text="New product" Clicked="newproduct_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
-            <Entry x:Name="txtReference" Placeholder="Reference" IsVisible="false"/>
-            <Entry x:Name="txtName" Placeholder="Name" IsVisible="false"/>
-            <Entry x:Name="txtDescription" Placeholder="Description" IsVisible="false" />
-            <Entry x:Name="txtPrice" Placeholder="Price" IsVisible="false" />
-            <Entry x:Name="txtQuantity" Placeholder="Quantity" IsVisible="false"/>
-            <Picker x:Name="picker"  ItemDisplayBinding="{Binding name}" Title="Select a category" IsVisible="false" SelectedIndexChanged="picker_SelectedIndexChanged"  />
-            <Button x:Name="btnCreate" Text="create" Clicked="btnCreate_Clicked" IsVisible="false" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige"  />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Margin="20" VerticalOptions="Center">
+                <Button x:Name="newproduct" Text="New product" Clicked="newproduct_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
+                <Entry x:Name="txtReference" Placeholder="Reference" IsVisible="false"/>
+                <Entry x:Name="txtName" Placeholder="Name" IsVisible="false"/>
+                <Entry x:Name="txtDescription" Placeholder="Description" IsVisible="false" />
+                <Entry x:Name="txtPrice" Placeholder="Price" IsVisible="false" />
+                <Entry x:Name="txtQuantity" Placeholder="Quantity" IsVisible="false"/>
+                <Picker x:Name="picker"  ItemDisplayBinding="{Binding name}" Title="Select a category" IsVisible="false" SelectedIndexChanged="picker_SelectedIndexChanged"  />
+                <Button x:Name="btnCreate" Text="create" Clicked="btnCreate_Clicked" IsVisible="false" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige"  />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

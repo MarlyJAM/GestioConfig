@@ -7,14 +7,16 @@
              BackgroundImageSource=""
              IconImageSource="box.png">
     <ContentPage.Content>
-        <StackLayout  Margin="20"  Spacing="10">
-            <Button Clicked="btndress_Clicked" Text="Dress" 
-                    FontAttributes="Bold" FontSize="Large" 
-                    BackgroundColor="#088da5" x:Name="btndress" CornerRadius="25" TextColor="Aqua" />
-            <Button Clicked="btnskirt_Clicked"  Text="Skirt" 
-                    FontAttributes="Bold" FontSize="Large"
-                    BackgroundColor="#088da5" x:Name="btnskirt" CornerRadius="25" TextColor="Aqua" />
-           
-        </StackLayout>
+        <ScrollView>
+            <StackLayout  Margin="20"  Spacing="10">
+                <Button Clicked="btndress_Clicked" Text="Dress" 
+                        FontAttributes="Bold" FontSize="Large" 
+                        BackgroundColor="#088da5" x:Name="btndress" CornerRadius="25" TextColor="Aqua" />
+                <Button Clicked="btnskirt_Clicked"  Text="Skirt" 
+                        FontAttributes="Bold" FontSize="Large"
+                        BackgroundColor="#088da5" x:Name="btnskirt" CornerRadius="25" TextColor="Aqua" />
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

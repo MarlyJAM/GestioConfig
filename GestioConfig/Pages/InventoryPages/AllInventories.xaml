@@ -5,15 +5,17 @@
              Title="AllInventories"
              IconImageSource="allinventories.png">
     <ContentPage.Content>
-        <StackLayout Margin="20" VerticalOptions="Center">
-            <Button x:Name="ShowInventory" Clicked="ShowInventory_Clicked" Text="show"  CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
-            <ListView x:Name="listInventories"  IsPullToRefreshEnabled="true" ItemSelected="listInventories_ItemSelected" IsVisible="false">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding date_added}" Detail="{Binding name}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Margin="20" VerticalOptions="Center">
+                <Button x:Name="ShowInventory" Clicked="ShowInventory_Clicked" Text="show"  CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
+                <ListView x:Name="listInventories"  IsPullToRefreshEnabled="true" ItemSelected="listInventories_ItemSelected" IsVisible="false">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding date_added}" Detail="{Binding name}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

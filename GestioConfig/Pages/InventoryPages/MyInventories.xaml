@@ -5,10 +5,12 @@
              Title="MyInventories"
              IconImageSource="myinventories.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to MyInventories!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Welcome to MyInventories!"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

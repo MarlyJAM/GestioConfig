@@ -6,19 +6,21 @@
              xmlns:models="clr-namespace:GestioConfig.Models"
              x:DataType="models:Products">
     <ContentPage.Content>
-        <StackLayout Margin="20">
-            <Label FontSize="Medium" Text="{Binding reference}"></Label>
-            <Entry x:Name="txtName"  Placeholder="Name" Text="{Binding name}"/>
-            <Entry x:Name="txtDescription" Placeholder="Description"  Text="{Binding description}"/>
-            <Entry x:Name="txtPrice"  Placeholder="Price"   Text="{Binding price}" />
-            <Entry x:Name="txtQuantity" Placeholder="Quantity"  Text="{Binding quantity}" />
-            <Picker x:Name="picker"  ItemDisplayBinding="{Binding name}" Title="Select a category" SelectedIndexChanged="picker_SelectedIndexChanged" SelectedItem="{Binding category_id}" />
-            <StackLayout Margin="20" Orientation="Horizontal"
-                 HorizontalOptions="Center"
-                         Spacing="20">
-                <Button x:Name="btnUpdate" Text="update" Clicked="btnUpdate_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige"  />
-                <Button x:Name="btnDelete" Text="delete" Clicked="btnDelete_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige"  />
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label FontSize="Medium" Text="{Binding reference}"></Label>
+                <Entry x:Name="txtName"  Placeholder="Name" Text="{Binding name}"/>
+                <Entry x:Name="txtDescription" Placeholder="Description"  Text="{Binding description}"/>
+                <Entry x:Name="txtPrice"  Placeholder="Price"   Text="{Binding price}" />
+                <Entry x:Name="txtQuantity" Placeholder="Quantity"  Text="{Binding quantity}" />
+                <Picker x:Name="picker"  ItemDisplayBinding="{Binding name}" Title="Select a category" SelectedIndexChanged="picker_SelectedIndexChanged" SelectedItem="{Binding category_id}" />
+                <StackLayout Margin="20" Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                             Spacing="20">
+                    <Button x:Name="btnUpdate" Text="update" Clicked="btnUpdate_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige"  />
+                    <Button x:Name="btnDelete" Text="delete" Clicked="btnDelete_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige"  />
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

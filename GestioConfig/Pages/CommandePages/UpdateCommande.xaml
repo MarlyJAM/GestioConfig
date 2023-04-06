@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:models="clr-namespace:GestioConfig.Models"
+             x:Class="GestioConfig.Pages.CommandePages.UpdateCommande">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Spacing="10" >
+                    <StackLayout Spacing="10" Margin="20">
+                        <Label x:Name="txtcommande" FontSize="Medium" Text="Update Commande" HorizontalOptions="Center" />
+                        <Entry x:DataType="models:Commande" x:Name="txtReference"  Placeholder="Reference" Text="{Binding reference}" ></Entry>
+                        <Entry x:DataType="models:Commande" x:Name="txtCustomer_mail" Keyboard = "Email"  Placeholder="Customer_mail"  Text="{Binding customer_email}"></Entry>
+                        <Entry x:DataType="models:Commande" x:Name="txtCustomer_name" Placeholder="Customer_name" Text="{Binding customer_name}" ></Entry>
+                        <Button x:Name="addProduct" Clicked="addProduct_Clicked"  Text="addProducts" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" ></Button>
+                    </StackLayout >
+                    <StackLayout x:Name="StackLayout" Margin="20" Orientation="Horizontal">
+                    </StackLayout >
+                    <StackLayout Margin="20">
+                        <Button x:Name="updateCommande" Clicked="updateCommande_Clicked"  Text="UPDATE"  CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" ></Button>
+                    </StackLayout>
+                </StackLayout>
+                <ListView x:Name="listProducts"  >
+                    <ListView.ItemTemplate >
+                        <DataTemplate x:DataType="models:Product">
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout>
+                                        <Label FontAttributes="Bold" Text="Ref:"  />
+                                        <Label x:Name="txtReferenceProduct" FontSize="15" Text="{Binding reference}"  />
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label FontAttributes="Bold"  Text="Name" />
+                                        <Label x:Name="txtNameProduct" FontSize="15"  Text="{Binding name}"  />
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label FontAttributes="Bold" Text="Quantity "  />
+                                        <Label x:Name="txtQuantity" FontSize="15"   Text="{Binding quantity}"/>
+                                    </StackLayout>
+                                    <StackLayout >
+                                        <Label FontAttributes="Bold"   Text="Price" />
+                                        <Label x:Name="txtPrice" FontSize="15"   Text="{Binding price}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

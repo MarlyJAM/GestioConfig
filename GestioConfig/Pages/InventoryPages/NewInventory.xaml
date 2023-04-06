@@ -5,10 +5,12 @@
              Title="NewInventory"
              IconImageSource="newinventory.png">
     <ContentPage.Content>
-        <StackLayout Margin="20" VerticalOptions="Center">
-            <Button x:Name="newinventory" Text="New inventory" Clicked="newinventory_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
-            <Entry x:Name="txtName" Placeholder="Name" IsVisible="false"/>
-            <Button x:Name="btnCreate" Text="create" Clicked="btnCreate_Clicked" IsVisible="false" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Margin="20" VerticalOptions="Center">
+                <Button x:Name="newinventory" Text="New inventory" Clicked="newinventory_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
+                <Entry x:Name="txtName" Placeholder="Name" IsVisible="false"/>
+                <Button x:Name="btnCreate" Text="create" Clicked="btnCreate_Clicked" IsVisible="false" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

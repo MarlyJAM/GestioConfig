@@ -5,39 +5,48 @@
              xmlns:models="clr-namespace:GestioConfig.Models"
             >
     <ContentPage.Content>
-        <StackLayout Margin="10" Spacing="20">
-            <Label x:DataType="models:Inventory" FontSize="Large" x:Name="txtdate" Text="{Binding date_added}"></Label>
-            <Label x:DataType="models:Inventory" FontSize="Large" x:Name="txtNameInventory" Text="{Binding name}"/>
-            <ListView x:Name="listProducts" ItemSelected="listProducts_ItemSelected" >
-                <ListView.ItemTemplate >
-                    <DataTemplate x:DataType="models:Product">
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <StackLayout>
-                                    <Label FontAttributes="Bold" Text="Ref:"  />
-                                    <Label x:Name="txtReference" FontSize="15" Text="{Binding reference}"  />
+        <ScrollView>
+            <StackLayout Margin="20" Spacing="20">
+                <StackLayout Orientation="Horizontal" Spacing="50">
+                    <StackLayout Orientation="Vertical">
+                        <Label x:DataType="models:Inventory" TextColor="Black" FontSize="Medium" x:Name="txtdate" Text="{Binding date_added}"></Label>
+                        <Label x:DataType="models:Inventory" TextColor="Black" FontSize="Medium" x:Name="txtNameInventory" Text="{Binding name}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <Button x:Name="btnDelete" Text="Delete" Clicked="btnDelete_Clicked" CornerRadius="25" BackgroundColor="LightSeaGreen" TextColor="Beige" />
+                    </StackLayout>
+                </StackLayout>
+                <ListView x:Name="listProducts" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate x:DataType="models:Product">
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout>
+                                        <Label TextColor="Black" FontAttributes="Bold" Text="Ref:"  />
+                                        <Label x:Name="txtReference" TextColor="Black" FontSize="15" Text="{Binding reference}"  />
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label FontAttributes="Bold" TextColor="Black" Text="Name" />
+                                        <Label x:Name="txtName" TextColor="Black" FontSize="15"  Text="{Binding name}"  />
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label FontAttributes="Bold" TextColor="Black" Text="Stock "  />
+                                        <Label x:Name="txtStock" TextColor="Black" FontSize="15"   Text="{Binding stock}"/>
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <Label FontAttributes="Bold" TextColor="Black"  Text="Quantity" />
+                                        <Label x:Name="txtQuantity" FontSize="15"  TextColor="Black" Text="{Binding quantity}" />
+                                    </StackLayout>
+                                    <StackLayout >
+                                        <Label FontAttributes="Bold"  TextColor="Black" Text="Price" />
+                                        <Label x:Name="txtPrice" FontSize="15" TextColor="Black"  Text="{Binding price}" />
+                                    </StackLayout>
                                 </StackLayout>
-                                <StackLayout>
-                                    <Label FontAttributes="Bold"  Text="Name" />
-                                    <Label x:Name="txtName" FontSize="15"  Text="{Binding name}"  />
-                                </StackLayout>
-                                <StackLayout>
-                                    <Label FontAttributes="Bold" Text="Stock "  />
-                                    <Label x:Name="txtStock" FontSize="15"   Text="{Binding stock}"/>
-                                </StackLayout>
-                                <StackLayout>
-                                    <Label FontAttributes="Bold"  Text="Quantity" />
-                                    <Label x:Name="txtQuantity" FontSize="15"   Text="{Binding quantity}" />
-                                </StackLayout>
-                                <StackLayout >
-                                    <Label FontAttributes="Bold"   Text="Price" />
-                                    <Label x:Name="txtPrice" FontSize="15"   Text="{Binding price}" />
-                                </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
