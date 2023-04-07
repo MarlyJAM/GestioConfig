@@ -55,7 +55,7 @@
                                         <Label x:Name="txtQuantity" FontSize="15"   Text="{Binding quantity}"/>
                                     </StackLayout>
                                     <StackLayout >
-                                        <Label FontAttributes="Bold"   Text="Price" />
+                                        <Label FontAttributes="Bold"   Text="Unit price" />
                                         <Label x:Name="txtPrice" FontSize="15"   Text="{Binding price}" />
                                     </StackLayout>
                                 </StackLayout>
